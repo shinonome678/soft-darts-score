@@ -1,11 +1,11 @@
-# Soft Darts Score 2.0 — iPad導入手順
+# Soft Darts Score 2.4 — iPad導入手順
 
 このアプリはPWAです。最初に一度だけWebへ公開し、iPadのSafariからホーム画面へ追加します。追加後は通常のアプリのように起動でき、ゲーム記録はiPad内に保存されます。
 
 ## 1. Webへ公開する（GitHub Pages）
 
 1. GitHubへサインインし、新しい公開リポジトリを作成します（例: `soft-darts-score`）。
-2. `SoftDartsScore_PWA_v2.0.zip` を展開します。
+2. `SoftDartsScore_PWA_v2.4.zip` を展開します。
 3. 展開した中のファイルをすべて、リポジトリの一番上へアップロードします。`index.html` が一番上にある状態にします。
 4. リポジトリの **Settings → Pages** を開きます。
 5. **Build and deployment** の Source を **Deploy from a branch** にします。
@@ -40,5 +40,9 @@
 - Cricket 1人練習、Count-Up、301 / 501 / 701
 - 3投ごとの自動交代、通常CricketのClose・加点・勝敗判定
 - ラウンド・選手・投目・Marksの投球履歴
+- 「ゲームを途中終了」の下に、現在選手の1投目・2投目・3投目を表示
+- 右下にPLAYER 1／PLAYER 2の得点と現在ラウンドを大型表示
+- ラウンドを `R5` 形式の白太字で表示
+- 得点可能ナンバーのダーツ盤セクター全体をPLAYER 1は赤、PLAYER 2は青でハイライト
 - 01 / Count-Upのラウンド別得点常時表示（100点以上はオレンジ）
 - オフライン保存、途中ゲーム復帰、UNDO

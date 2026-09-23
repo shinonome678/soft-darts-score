@@ -10,8 +10,8 @@
   <title>Soft Darts Score</title>
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="icon.svg" type="image/svg+xml">
-  <link rel="stylesheet" href="styles.css?v=2.0">
-  <link rel="stylesheet" href="ipad.css?v=2.0">
+  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="stylesheet" href="ipad.css?v=2.4">
 </head>
 <body>
 <main id="app" class="app-shell">
@@ -46,14 +46,15 @@
       <span id="roundPill" class="pill"></span>
     </header>
     <div id="normalScore" class="score-row"><div><small id="scoreCaption">TOTAL</small><b id="currentScore">0</b></div><div><small>次の投球</small><b id="nextDart">1本目</b></div></div>
-    <div id="feedback" class="feedback" aria-live="polite">ボードをタップ</div>
     <div id="playArea" class="play-area">
       <div class="board-column"><div id="board" class="board-wrap" aria-label="ダーツボード"></div></div>
-      <aside id="vsScoreboard" class="vs-scoreboard hidden"></aside>
+      <div id="vsColumn" class="vs-column hidden"><aside id="vsScoreboard" class="vs-scoreboard"></aside><div id="vsStatusBottom" class="vs-status-bottom"></div></div>
       <aside id="roundHistory" class="round-history"></aside>
     </div>
     <div class="game-actions"><button id="miss" class="button compact">MISS</button><button id="undo" class="button compact">↶ 1投戻す</button><button id="bust" class="button compact danger hidden">BUST</button></div>
     <button id="finishGame" class="text-button">ゲームを途中終了</button>
+    <div id="feedback" class="status-live" aria-live="polite">ボードをタップ</div>
+    <div id="turnDarts" class="turn-darts" aria-label="現在の3投"></div>
   </section>
 
   <section id="result" class="screen">
@@ -70,6 +71,6 @@
 </main>
 
 <div id="dialog" class="dialog hidden"><div class="dialog-box"><h2 id="dialogTitle"></h2><p id="dialogText"></p><div class="dialog-actions"><button id="dialogCancel" class="button">キャンセル</button><button id="dialogOk" class="button danger">実行</button></div></div></div>
-<script src="app.js?v=2.0"></script>
+<script src="app.js?v=2.4"></script>
 </body>
 </html>
