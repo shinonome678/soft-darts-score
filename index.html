@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+  <meta name="theme-color" content="#090c10">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Darts Score">
+  <title>Soft Darts Score</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=2.0">
+  <link rel="stylesheet" href="ipad.css?v=2.0">
+</head>
+<body>
+<main id="app" class="app-shell">
+  <section id="home" class="screen active">
+    <header class="top"><div><small id="today"></small><h1>Soft Darts Score</h1></div><span class="pill">OFFLINE</span></header>
+    <div id="resumeCard" class="card hidden"></div>
+    <div class="card hero-card"><small>今日のCOUNT-UP平均</small><div id="homeAverage" class="hero">—</div><div class="home-stats"><div><small>Bull率</small><b id="homeBull">—</b></div><div><small>今日のゲーム</small><b id="homeGames">0</b></div></div></div>
+    <div class="home-actions"><button class="button primary" data-go="select">記録する</button><button class="button" data-go="records">記録を見る</button></div>
+  </section>
+
+  <section id="select" class="screen">
+    <header class="top"><button class="icon-button" data-go="home">←</button><h1>記録する</h1><span></span></header>
+    <div class="game-grid">
+      <button class="game-card featured" data-start="CRICKET_VS"><span class="tag">2 PLAYERS</span><b>Cricket 対戦</b><span>基本ルール · 最大15ラウンド</span></button>
+      <button class="game-card" data-go="zeroSetup"><b>01</b><span>301 / 501 / 701 · Fat Bull</span></button>
+      <button class="game-card" data-start="COUNT_UP"><b>Count-Up</b><span>8 Rounds / 24 Darts</span></button>
+      <button class="game-card" data-start="CRICKET"><b>Cricket 練習</b><span>1 Player · 8 Rounds</span></button>
+    </div>
+  </section>
+
+  <section id="zeroSetup" class="screen">
+    <header class="top"><button class="icon-button" data-go="select">←</button><h1>01</h1><span></span></header>
+    <div class="card"><small>開始点数</small><div class="segments"><button data-score="301">301</button><button data-score="501" class="selected">501</button><button data-score="701">701</button></div></div>
+    <div class="card"><h2>Open In / Open Out</h2><p>Fat Bull：Outer 50 / Inner 50（別々に記録）</p></div>
+    <button id="startZero" class="button primary">ゲーム開始</button>
+  </section>
+
+  <section id="game" class="screen game-screen">
+    <header class="game-header">
+      <button id="leaveGame" class="icon-button">×</button>
+      <div><h1 id="gameTitle"></h1><span id="gameProgress"></span></div>
+      <span id="roundPill" class="pill"></span>
+    </header>
+    <div id="normalScore" class="score-row"><div><small id="scoreCaption">TOTAL</small><b id="currentScore">0</b></div><div><small>次の投球</small><b id="nextDart">1本目</b></div></div>
+    <div id="feedback" class="feedback" aria-live="polite">ボードをタップ</div>
+    <div id="playArea" class="play-area">
+      <div class="board-column"><div id="board" class="board-wrap" aria-label="ダーツボード"></div></div>
+      <aside id="vsScoreboard" class="vs-scoreboard hidden"></aside>
+      <aside id="roundHistory" class="round-history"></aside>
+    </div>
+    <div class="game-actions"><button id="miss" class="button compact">MISS</button><button id="undo" class="button compact">↶ 1投戻す</button><button id="bust" class="button compact danger hidden">BUST</button></div>
+    <button id="finishGame" class="text-button">ゲームを途中終了</button>
+  </section>
+
+  <section id="result" class="screen">
+    <header class="top"><button class="icon-button" data-go="home">×</button><h1>RESULT</h1><span></span></header>
+    <div id="resultContent"></div>
+    <div class="home-actions"><button class="button primary" data-go="home">ホームへ</button><button class="button" data-go="records">記録を見る</button></div>
+  </section>
+
+  <section id="records" class="screen">
+    <header class="top"><button class="icon-button" data-go="home">←</button><h1>記録を見る</h1><span></span></header>
+    <nav class="tabs"><button class="selected" data-tab="todayTab">今日</button><button data-tab="historyTab">履歴</button><button data-tab="bestTab">自己ベスト</button></nav>
+    <div id="todayTab" class="tab-pane active"></div><div id="historyTab" class="tab-pane"></div><div id="bestTab" class="tab-pane"></div>
+  </section>
+</main>
+
+<div id="dialog" class="dialog hidden"><div class="dialog-box"><h2 id="dialogTitle"></h2><p id="dialogText"></p><div class="dialog-actions"><button id="dialogCancel" class="button">キャンセル</button><button id="dialogOk" class="button danger">実行</button></div></div></div>
+<script src="app.js?v=2.0"></script>
+</body>
+</html>
