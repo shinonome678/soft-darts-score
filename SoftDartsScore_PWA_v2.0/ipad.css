@@ -1,0 +1,6 @@
+@media (orientation: landscape) and (min-width: 761px) {
+  .board-wrap { width: min(61vh, 620px, 100%); }
+  .round-history, .vs-scoreboard { height: min(61vh, 620px); }
+  .cricket-cell { height: 38px; }
+  .game-screen .game-actions { margin-top: 8px; }
+}
